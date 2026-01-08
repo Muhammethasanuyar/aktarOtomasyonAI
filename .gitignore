@@ -1,0 +1,51 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.vspscc
+
+# NuGet
+packages/
+*.nupkg
+
+# DevExpress
+*.DevExpress.*.licenses
+
+# User-specific files
+*.rsuser
+*.userprefs
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Secrets
+**/appsettings.*.json
+!**/appsettings.json
+!**/appsettings.Development.json
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Windows reserved names
+nul
+con
+prn
+aux

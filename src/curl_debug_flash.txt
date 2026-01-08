@@ -1,0 +1,57 @@
+Note: Unnecessary use of -X or --request, POST is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0* Host generativelanguage.googleapis.com:443 was resolved.
+* IPv6: 2a00:1450:4017:807::200a, 2a00:1450:4017:800::200a, 2a00:1450:4017:810::200a, 2a00:1450:4017:811::200a
+* IPv4: 142.251.142.106, 172.217.17.106, 216.58.213.106, 142.250.187.106, 172.217.18.170, 216.58.212.10, 142.250.187.170, 142.250.187.138, 216.58.212.42, 142.250.184.138, 142.251.140.42, 142.251.140.10, 142.251.38.234, 216.58.214.138, 172.217.17.138, 172.217.169.138
+*   Trying [2a00:1450:4017:807::200a]:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0* ALPN: server accepted http/1.1
+* Connected to generativelanguage.googleapis.com (2a00:1450:4017:807::200a) port 443
+* using HTTP/1.x
+> POST /v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDWJW8sxJVghQHL_hlhI8dpl7PyNHGrmL8 HTTP/1.1
+> Host: generativelanguage.googleapis.com
+> User-Agent: curl/8.13.0
+> Accept: */*
+>  Content-Type: application/json
+> Content-Length: 145
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [145 bytes data]
+* upload completely sent off: 145 bytes
+< HTTP/1.1 400 Bad Request
+< Vary: X-Origin
+< Vary: Referer
+< Content-Type: application/json; charset=UTF-8
+< Date: Tue, 06 Jan 2026 14:19:34 GMT
+< Server: scaffolding on HTTPServer2
+< X-XSS-Protection: 0
+< X-Frame-Options: SAMEORIGIN
+< X-Content-Type-Options: nosniff
+< Server-Timing: gfet4t7; dur=48
+< Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+< Accept-Ranges: none
+< Vary: Origin,Accept-Encoding
+< Transfer-Encoding: chunked
+< 
+{ [1156 bytes data]
+100  1294    0  1149  100   145    406     51  0:00:02  0:00:02 --:--:--   457
+* Connection #0 to host generativelanguage.googleapis.com left intact
+{
+  "error": {
+    "code": 400,
+    "message": "Invalid JSON payload received. Unknown name \"{    \"contents\": [        {            \"parts\": [                {                    \"text\": \"Test\"                }            ]        }    ]}\": Cannot bind query parameter. Field '{    \"contents\": [        {            \"parts\": [                {                    \"text\": \"Test\"                }            ]        }    ]}' could not be found in request message.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.BadRequest",
+        "fieldViolations": [
+          {
+            "description": "Invalid JSON payload received. Unknown name \"{    \"contents\": [        {            \"parts\": [                {                    \"text\": \"Test\"                }            ]        }    ]}\": Cannot bind query parameter. Field '{    \"contents\": [        {            \"parts\": [                {                    \"text\": \"Test\"                }            ]        }    ]}' could not be found in request message."
+          }
+        ]
+      }
+    ]
+  }
+}

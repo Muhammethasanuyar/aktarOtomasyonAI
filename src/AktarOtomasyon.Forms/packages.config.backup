@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <!-- DevExpress WinForms -->
+  <package id="DevExpress.WindowsForms" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.Data" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.Utils" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraEditors" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraGrid" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraLayout" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraNavBar" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraTreeList" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraCharts" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraReports" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraBars" version="25.1.5" targetFramework="net48" />
+  <package id="DevExpress.XtraRichEdit" version="25.1.5" targetFramework="net48" />
+
+  <!-- System packages -->
+  <package id="System.Data.SqlClient" version="4.8.5" targetFramework="net48" />
+</packages>

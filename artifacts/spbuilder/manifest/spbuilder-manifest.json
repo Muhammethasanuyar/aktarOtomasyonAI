@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "database": {
+    "connectionStringName": "Db",
+    "note": "Connection string from App.config"
+  },
+  "assemblies": [
+    {
+      "name": "Common.Sp",
+      "namespace": "AktarOtomasyon.Sp.Common",
+      "outputPath": "../dll/Common.Sp.dll",
+      "storedProcedures": [
+        "sp_kul_ekran_getir",
+        "sp_kul_ekran_versiyon_logla"
+      ]
+    },
+    {
+      "name": "Urun.Sp",
+      "namespace": "AktarOtomasyon.Sp.Urun",
+      "outputPath": "../dll/Urun.Sp.dll",
+      "storedProcedures": [
+        "sp_urun_kaydet",
+        "sp_urun_getir",
+        "sp_urun_listele",
+        "sp_urun_pasifle",
+        "sp_urun_stok_ayar_kaydet",
+        "sp_urun_stok_ayar_getir",
+        "sp_urun_gorsel_ekle",
+        "sp_urun_gorsel_sil",
+        "sp_urun_gorsel_listele",
+        "sp_urun_ana_gorsel_set"
+      ]
+    },
+    {
+      "name": "Stok.Sp",
+      "namespace": "AktarOtomasyon.Sp.Stok",
+      "outputPath": "../dll/Stok.Sp.dll",
+      "storedProcedures": [
+        "sp_stok_hareket_ekle",
+        "sp_stok_durum_getir",
+        "sp_stok_kritik_listele"
+      ]
+    },
+    {
+      "name": "Siparis.Sp",
+      "namespace": "AktarOtomasyon.Sp.Siparis",
+      "outputPath": "../dll/Siparis.Sp.dll",
+      "storedProcedures": [
+        "sp_siparis_taslak_olustur",
+        "sp_siparis_satir_ekle",
+        "sp_siparis_satir_listele",
+        "sp_siparis_listele",
+        "sp_siparis_durum_guncelle",
+        "sp_siparis_teslim_al"
+      ]
+    },
+    {
+      "name": "Bildirim.Sp",
+      "namespace": "AktarOtomasyon.Sp.Bildirim",
+      "outputPath": "../dll/Bildirim.Sp.dll",
+      "storedProcedures": [
+        "sp_bildirim_ekle",
+        "sp_bildirim_listele",
+        "sp_bildirim_okundu"
+      ]
+    },
+    {
+      "name": "Ai.Sp",
+      "namespace": "AktarOtomasyon.Sp.Ai",
+      "outputPath": "../dll/Ai.Sp.dll",
+      "storedProcedures": [
+        "sp_ai_icerik_getir",
+        "sp_ai_icerik_kaydet",
+        "sp_ai_icerik_versiyon_listele",
+        "sp_ai_icerik_onayla"
+      ]
+    }
+  ],
+  "buildOptions": {
+    "generateXmlDocs": true,
+    "targetFramework": "net48"
+  }
+}

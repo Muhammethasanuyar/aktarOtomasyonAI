@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C345678-9ABC-DEF0-5678-012345678901}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AktarOtomasyon.Ai.Service</RootNamespace>
+    <AssemblyName>AktarOtomasyon.Ai.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArch=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AktarOtomasyon.Common.Interface\AktarOtomasyon.Common.Interface.csproj">
+      <Project>{B2C3D4E5-F678-9012-BCDE-F12345678901}</Project>
+      <Name>AktarOtomasyon.Common.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Common.Service\AktarOtomasyon.Common.Service.csproj">
+      <Project>{C3D4E5F6-7890-1234-CDEF-123456789012}</Project>
+      <Name>AktarOtomasyon.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Util.DataAccess\AktarOtomasyon.Util.DataAccess.csproj">
+      <Project>{D4E5F678-9012-3456-DEF1-234567890123}</Project>
+      <Name>AktarOtomasyon.Util.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Ai.Interface\AktarOtomasyon.Ai.Interface.csproj">
+      <Project>{5B234567-89AB-CDEF-4567-901234567890}</Project>
+      <Name>AktarOtomasyon.Ai.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AiService.cs" />
+    <Compile Include="AiProviderBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

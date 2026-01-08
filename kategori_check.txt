@@ -1,0 +1,9 @@
+kategori_kod kategori_adi first_char_unicode
+------------ ------------ ------------------
+BAHARAT Baharatlar 66
+KURUYEMIS Kuruyemiþler 75
+BAKLIYAT Bakliyatlar 66
+SEKER Þekerlemeler 350
+KAHVE Kahve ve Çay 75
+
+(5 rows affected)

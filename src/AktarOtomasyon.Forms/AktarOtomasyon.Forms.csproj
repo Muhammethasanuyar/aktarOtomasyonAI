@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AktarOtomasyon.Forms</RootNamespace>
+    <AssemblyName>AktarOtomasyon.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArch=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <!-- DevExpress DLL Referansları -->
+    <Reference Include="DevExpress.Data.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.Data.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.Data.Desktop.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.Drawing.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.Utils.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraEditors.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraGrid.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraLayout.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraNavBar.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraTreeList.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraCharts.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraReports.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraBars.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v25.1">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.XtraRichEdit.v25.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v25.1.Core">
+      <HintPath>C:\Program Files\DevExpress 25.1\Components\Bin\Framework\DevExpress.Printing.v25.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Forms yalnız Interface projelerini referans eder - KURAL: Service/DataAccess YASAK -->
+    <ProjectReference Include="..\AktarOtomasyon.Ai.Service\AktarOtomasyon.Ai.Service.csproj">
+      <Project>{6c345678-9abc-def0-5678-012345678901}</Project>
+      <Name>AktarOtomasyon.Ai.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Common.Interface\AktarOtomasyon.Common.Interface.csproj">
+      <Project>{B2C3D4E5-F678-9012-BCDE-F12345678901}</Project>
+      <Name>AktarOtomasyon.Common.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Common.Service\AktarOtomasyon.Common.Service.csproj">
+      <Project>{c3d4e5f6-7890-1234-cdef-123456789012}</Project>
+      <Name>AktarOtomasyon.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Siparis.Service\AktarOtomasyon.Siparis.Service.csproj">
+      <Project>{4a123456-789a-bcde-3456-890123456789}</Project>
+      <Name>AktarOtomasyon.Siparis.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Stok.Service\AktarOtomasyon.Stok.Service.csproj">
+      <Project>{28901234-5678-9abc-1234-678901234567}</Project>
+      <Name>AktarOtomasyon.Stok.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Urun.Interface\AktarOtomasyon.Urun.Interface.csproj">
+      <Project>{E5F67890-1234-5678-EF12-345678901234}</Project>
+      <Name>AktarOtomasyon.Urun.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Stok.Interface\AktarOtomasyon.Stok.Interface.csproj">
+      <Project>{17890123-4567-89AB-0123-567890123456}</Project>
+      <Name>AktarOtomasyon.Stok.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Siparis.Interface\AktarOtomasyon.Siparis.Interface.csproj">
+      <Project>{39012345-6789-ABCD-2345-789012345678}</Project>
+      <Name>AktarOtomasyon.Siparis.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Ai.Interface\AktarOtomasyon.Ai.Interface.csproj">
+      <Project>{5B234567-89AB-CDEF-4567-901234567890}</Project>
+      <Name>AktarOtomasyon.Ai.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Template.Interface\AktarOtomasyon.Template.Interface.csproj">
+      <Project>{7E8F9A0B-1C2D-3E4F-5A6B-7C8D9E0F1A2B}</Project>
+      <Name>AktarOtomasyon.Template.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Template.Service\AktarOtomasyon.Template.Service.csproj">
+      <Project>{8F9A0B1C-2D3E-4F5A-6B7C-8D9E0F1A2B3C}</Project>
+      <Name>AktarOtomasyon.Template.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Urun.Service\AktarOtomasyon.Urun.Service.csproj">
+      <Project>{f6789012-3456-789a-f123-456789012345}</Project>
+      <Name>AktarOtomasyon.Urun.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Util.DataAccess\AktarOtomasyon.Util.DataAccess.csproj">
+      <Project>{d4e5f678-9012-3456-def1-234567890123}</Project>
+      <Name>AktarOtomasyon.Util.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Security.Interface\AktarOtomasyon.Security.Interface.csproj">
+      <Project>{A1B2C3D4-E5F6-4789-A1B2-C3D4E5F67890}</Project>
+      <Name>AktarOtomasyon.Security.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Security.Service\AktarOtomasyon.Security.Service.csproj">
+      <Project>{B2C3D4E5-F678-5890-B2C3-D4E5F6789012}</Project>
+      <Name>AktarOtomasyon.Security.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Audit.Interface\AktarOtomasyon.Audit.Interface.csproj">
+      <Project>{C3D4E5F6-7890-6901-C3D4-E5F678901234}</Project>
+      <Name>AktarOtomasyon.Audit.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AktarOtomasyon.Audit.Service\AktarOtomasyon.Audit.Service.csproj">
+      <Project>{D4E5F678-9012-7012-D4E5-F67890123456}</Project>
+      <Name>AktarOtomasyon.Audit.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\InterfaceFactory.cs" />
+    <Compile Include="Common\UrunLookupProvider.cs" />
+    <Compile Include="Common\SiparisLookupProvider.cs" />
+    <Compile Include="Common\ButtonHelper.cs" />
+    <Compile Include="Common\ModernTheme.cs" />
+    <Compile Include="Common\PanelHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\CommonFunction.cs" />
+    <Compile Include="Common\DMLManager.cs" />
+    <Compile Include="Common\MessageHelper.cs" />
+    <Compile Include="Common\GridHelper.cs" />
+    <Compile Include="Common\IconHelper.cs" />
+    <Compile Include="Common\TextHelper.cs" />
+    <Compile Include="Common\ImageFileHelper.cs" />
+    <Compile Include="Common\EmptyStatePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\EmptyStatePanel.Designer.cs">
+      <DependentUpon>EmptyStatePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\UcBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\ErrorManager.cs" />
+    <Compile Include="Managers\NavigationManager.cs" />
+    <Compile Include="Screens\Dashboard\FrmANA_DASH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Dashboard\FrmANA_DASH.Designer.cs">
+      <DependentUpon>FrmANA_DASH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Dashboard\UcANA_DASH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Dashboard\UcANA_DASH.Designer.cs">
+      <DependentUpon>UcANA_DASH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunListe.Designer.cs">
+      <DependentUpon>FrmUrunListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunListe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunListe.Designer.cs">
+      <DependentUpon>UcUrunListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunKart.Designer.cs">
+      <DependentUpon>FrmUrunKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunKart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunKart.Designer.cs">
+      <DependentUpon>UcUrunKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunGorselYonetim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunGorselYonetim.Designer.cs">
+      <DependentUpon>UcUrunGorselYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunKatalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunKatalog.Designer.cs">
+      <DependentUpon>UcUrunKatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunKatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunKatalog.Designer.cs">
+      <DependentUpon>FrmUrunKatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\FrmUrunDetay.Designer.cs">
+      <DependentUpon>FrmUrunDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunDetay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Urun\UcUrunDetay.Designer.cs">
+      <DependentUpon>UcUrunDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Stok\FrmStokHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Stok\FrmStokHareket.Designer.cs">
+      <DependentUpon>FrmStokHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Stok\UcStokHareket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Stok\UcStokHareket.Designer.cs">
+      <DependentUpon>UcStokHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Stok\FrmStokKritik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Stok\FrmStokKritik.Designer.cs">
+      <DependentUpon>FrmStokKritik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Stok\UcStokKritik.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Stok\UcStokKritik.Designer.cs">
+      <DependentUpon>UcStokKritik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Bildirim\FrmBildirimMrk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Bildirim\FrmBildirimMrk.Designer.cs">
+      <DependentUpon>FrmBildirimMrk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Bildirim\UcBildirimMrk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Bildirim\UcBildirimMrk.Designer.cs">
+      <DependentUpon>UcBildirimMrk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\FrmSiparisListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\FrmSiparisListe.Designer.cs">
+      <DependentUpon>FrmSiparisListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\UcSiparisListe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\UcSiparisListe.Designer.cs">
+      <DependentUpon>UcSiparisListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\FrmSiparisTaslak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\FrmSiparisTaslak.Designer.cs">
+      <DependentUpon>FrmSiparisTaslak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\UcSiparisTaslak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\UcSiparisTaslak.Designer.cs">
+      <DependentUpon>UcSiparisTaslak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\DlgSiparisSatir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\DlgSiparisSatir.Designer.cs">
+      <DependentUpon>DlgSiparisSatir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\FrmSiparisTeslim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\FrmSiparisTeslim.Designer.cs">
+      <DependentUpon>FrmSiparisTeslim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Siparis\UcSiparisTeslim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Siparis\UcSiparisTeslim.Designer.cs">
+      <DependentUpon>UcSiparisTeslim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\FrmAiSablonYonetim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\FrmAiSablonYonetim.Designer.cs">
+      <DependentUpon>FrmAiSablonYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\UcAiSablonYonetim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\UcAiSablonYonetim.Designer.cs">
+      <DependentUpon>UcAiSablonYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\DlgAiSablonDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\DlgAiSablonDetay.Designer.cs">
+      <DependentUpon>DlgAiSablonDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\FrmAiModul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\FrmAiModul.Designer.cs">
+      <DependentUpon>FrmAiModul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\UcAiModul.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\UcAiModul.Designer.cs">
+      <DependentUpon>UcAiModul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\FrmAiVersiyonlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\FrmAiVersiyonlar.Designer.cs">
+      <DependentUpon>FrmAiVersiyonlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Ai\UcAiVersiyonlar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Ai\UcAiVersiyonlar.Designer.cs">
+      <DependentUpon>UcAiVersiyonlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Template\FrmTemplateMrk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Template\FrmTemplateMrk.Designer.cs">
+      <DependentUpon>FrmTemplateMrk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Template\UcTemplateMrk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Template\UcTemplateMrk.Designer.cs">
+      <DependentUpon>UcTemplateMrk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Template\FrmSystemSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Template\FrmSystemSettings.Designer.cs">
+      <DependentUpon>FrmSystemSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Template\UcSystemSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Template\UcSystemSettings.Designer.cs">
+      <DependentUpon>UcSystemSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\TemplateLookupProvider.cs" />
+    <!-- Sprint 7: Security & Audit -->
+    <Compile Include="Managers\SessionManager.cs" />
+    <Compile Include="Helpers\PermissionHelper.cs" />
+    <Compile Include="Helpers\ConfigurationValidator.cs" />
+    <Compile Include="Screens\Security\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\FrmSecurityManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\FrmSecurityManagement.Designer.cs">
+      <DependentUpon>FrmSecurityManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\UcSecurityManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\UcSecurityManagement.Designer.cs">
+      <DependentUpon>UcSecurityManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\UcKullaniciYonetim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\UcKullaniciYonetim.Designer.cs">
+      <DependentUpon>UcKullaniciYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\UcRolYonetim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\UcRolYonetim.Designer.cs">
+      <DependentUpon>UcRolYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\FrmAuditViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\FrmAuditViewer.Designer.cs">
+      <DependentUpon>FrmAuditViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\UcAuditViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\UcAuditViewer.Designer.cs">
+      <DependentUpon>UcAuditViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Security\DlgChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Security\DlgChangePassword.Designer.cs">
+      <DependentUpon>DlgChangePassword.cs</DependentUpon>
+    </Compile>
+    <!-- Sprint 8: System Diagnostics -->
+    <Compile Include="Screens\Diagnostics\FrmSYS_DIAG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Diagnostics\FrmSYS_DIAG.Designer.cs">
+      <DependentUpon>FrmSYS_DIAG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Diagnostics\UcSYS_DIAG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Diagnostics\UcSYS_DIAG.Designer.cs">
+      <DependentUpon>UcSYS_DIAG.cs</DependentUpon>
+    </Compile>
+    <!-- Sprint 9: Reports (Iteration 3) -->
+    <Compile Include="Screens\Raporlar\FrmRaporlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Raporlar\FrmRaporlar.Designer.cs">
+      <DependentUpon>FrmRaporlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Raporlar\UcRaporlar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Raporlar\UcRaporlar.Designer.cs">
+      <DependentUpon>UcRaporlar.cs</DependentUpon>
+    </Compile>
+    <!-- Sprint 10: Sales & Barcode (Iteration 4) -->
+    <Compile Include="Screens\Satis\FrmSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Satis\FrmSatis.Designer.cs">
+      <DependentUpon>FrmSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Satis\UcSatis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Satis\UcSatis.Designer.cs">
+      <DependentUpon>UcSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Test\FrmBarkodTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Test\FrmBarkodTest.Designer.cs">
+      <DependentUpon>FrmBarkodTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Test\UcBarkodTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\Test\UcBarkodTest.Designer.cs">
+      <DependentUpon>UcBarkodTest.cs</DependentUpon>
+    </Compile>
+    <!-- Dialogs -->
+    <Compile Include="Dialogs\DlgTedarikciSecim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DlgTedarikciSecim.Designer.cs">
+      <DependentUpon>DlgTedarikciSecim.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Ai\DlgAiSablonDetay.resx">
+      <DependentUpon>DlgAiSablonDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Urun\FrmUrunListe.resx">
+      <DependentUpon>FrmUrunListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Urun\FrmUrunKart.resx">
+      <DependentUpon>FrmUrunKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Stok\FrmStokHareket.resx">
+      <DependentUpon>FrmStokHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Stok\UcStokHareket.resx">
+      <DependentUpon>UcStokHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Stok\FrmStokKritik.resx">
+      <DependentUpon>FrmStokKritik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Stok\UcStokKritik.resx">
+      <DependentUpon>UcStokKritik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Bildirim\FrmBildirimMrk.resx">
+      <DependentUpon>FrmBildirimMrk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Bildirim\UcBildirimMrk.resx">
+      <DependentUpon>UcBildirimMrk.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

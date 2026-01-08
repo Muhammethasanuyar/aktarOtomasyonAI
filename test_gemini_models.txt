@@ -1,0 +1,80 @@
+==============================================
+GEMINI API 404 HATASI - ÇÖZÜM KILAVUZU
+==============================================
+
+SORUN: 404 hatasının 2 olası sebebi var:
+
+1. MODEL ADI YANLIŞ
+2. API VERSİYONU YANLIŞ
+
+==============================================
+ÇÖZÜM 1: Model Adını Düzelt (En Olası)
+==============================================
+
+Google Gemini API'nin güncel model isimleri:
+
+✅ gemini-1.5-flash (HIZLI, ÜCRETSİZ - ÖNERİLEN)
+✅ gemini-1.5-pro (GÜÇLÜ, ÜCRETLİ)
+✅ gemini-pro (ESKİ MODEL, DEPRECATED)
+
+App.config'de şu değişikliği yapın:
+
+ÖNCESİ:
+<add key="AI_MODEL" value="gemini-pro" />
+
+SONRASI:
+<add key="AI_MODEL" value="gemini-1.5-flash" />
+
+==============================================
+ÇÖZÜM 2: API Endpoint Versiyonunu Düzelt
+==============================================
+
+Eğer model adı doğru ama yine 404 alıyorsanız:
+
+AiProviderBase.cs dosyasında Line 156:
+
+ÖNCESİ (v1beta):
+private const string GEMINI_API_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{0}:generateContent?key={1}";
+
+SONRASI (v1):
+private const string GEMINI_API_ENDPOINT = "https://generativelanguage.googleapis.com/v1/models/{0}:generateContent?key={1}";
+
+==============================================
+TEST KOMUTU
+==============================================
+
+PowerShell'de şu komutu çalıştırarak API'yi test edebilirsiniz:
+
+$url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDWJW8sxJVghQHL_hlhI8dpl7PyNHGrmL8"
+$body = @{
+    contents = @(
+        @{
+            parts = @(
+                @{ text = "Merhaba" }
+            )
+        }
+    )
+} | ConvertTo-Json -Depth 10
+
+Invoke-RestMethod -Uri $url -Method POST -Body $body -ContentType "application/json; charset=utf-8"
+
+Eğer bu komut çalışırsa: Model adı doğru
+Eğer 404 alırsanız: Model adını değiştirin (gemini-1.5-flash → gemini-pro)
+
+==============================================
+ÖNERİLEN ÇÖZÜM (HIZLI)
+==============================================
+
+1. Uygulamayı kapatın
+
+2. App.config'i açın:
+   C:\Users\Muhammet\Desktop\aktar_otomasyon\src\AktarOtomasyon.Forms\App.config
+
+3. Line 23'ü değiştirin:
+   <add key="AI_MODEL" value="gemini-1.5-flash" />
+
+4. Kaydedin ve uygulamayı yeniden başlatın
+
+5. Ürün detay ekranını test edin
+
+==============================================

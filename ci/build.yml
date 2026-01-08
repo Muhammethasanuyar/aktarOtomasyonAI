@@ -1,0 +1,45 @@
+name: Build AktarOtomasyon
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET Framework
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+
+    - name: Restore NuGet packages
+      run: nuget restore src/AktarOtomasyon.sln
+
+    - name: Build Solution
+      run: msbuild src/AktarOtomasyon.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+    - name: Validate Reference Matrix
+      shell: powershell
+      run: |
+        # Forms projesinde yasak referans kontrolu
+        $content = Get-Content "src/AktarOtomasyon.Forms/AktarOtomasyon.Forms.csproj" -Raw
+        if ($content -match "\.Service\.csproj" -or $content -match "DataAccess\.csproj") {
+          Write-Error "FAIL: Forms projesinde yasak referans bulundu (Service veya DataAccess)"
+          exit 1
+        }
+        Write-Host "PASS: Referans matrisi dogrulandi"
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-output
+        path: src/**/bin/Release/
+        retention-days: 7
